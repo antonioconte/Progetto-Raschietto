@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/fakeLoader.css">
+		<link rel="shortcut icon" type="image/x-icon" href="css/notes.png">
+		<title>Script&Furious - Raschietto!</title>
+		<!--stile-->
+		<link  rel="stylesheet" href="css/stile.css">
+		<link rel="stylesheet" href="css/bootstrap.css" media="screen">
+		<link rel="stylesheet" href="https://bootswatch.com/assets/css/bootswatch.min.css">
+		<link rel="stylesheet" href="css/cssprogetto.css">
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+	</head>
+
+	<body id="corpo" class="corpov">
+
+		<div class="fakeloader"></div>
+		<div id="top_page"></div>
+		<!--Barra superiore-->
+		<nav id="bar" class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="http://vitali.web.cs.unibo.it/TechWeb15/ProgettoDelCorso">Raschietto</a>
+				</div>
+
+				<div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li>
+							<a href="#" role="button" data-toggle="modal" data-target="#curiosita">Chi siamo</a>
+						</li>
+						<li>
+							<a href="#" role="button" data-toggle="modal" data-target="#scopo">Scopo del Progetto</a>
+						</li>
+						<li>
+							<a href="#" role="button" data-toggle="modal" data-target="#new">Help</a>
+						</li>
+
+						<li>
+						 <input type="text" class="form-control" id="searchbar" placeholder="Cerca...">
+						</li>
+						<li>
+							<input type="button" value="Search" id="search_url" class="btn btn-default-sm">
+						</li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+					<li id='nome-annotatore'>	</li>
+							<li class="dropdown">
+								<a href="#" class="viewer-editor dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+									<i class="fa fa-child fa-lg"></i> Viewer <span class="caret"></span>
+								<ul class="dropdown-menu otherMode" role="menu">
+								  <li class="btn-annotator">
+
+										 <a><i class="fa fa-pencil-square-o fa-lg"></i> Annotator </a>
+									</li>
+								</ul>
+							</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<div id="contenitore_modal">
+			<!-- modal Login -->
+			<div id="modal_login" class="modal fade">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							<h4 class="modal-title">Login</h4>
+						</div>
+						<div class="modal-body form-horizontal">
+
+							<div class="form-group">
+								<label class="col-lg-2 control-label">Nome</label>
+								<div class="col-lg-6">
+									<input type="text" value="Script And Furious" class="form-control" id="inputNomeLogin" placeholder="Nome...">
+								</div>
+							</div>
+							<div class="form-group">
+
+								<label class="col-lg-2 control-label">Email</label>
+								<div class="col-lg-6">
+									<input type="text" value="ltw1515@studio.unibo.it" class="form-control" id="inputEmailLogin" placeholder="Email...">
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">	Close </button>
+							<button type="button" onclick="enter()" class="btn btn-default" data-dismiss="modal">	Enter </button>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+		<!--End modal Login-->
+
+			<div id="curiosita" class="modal fade">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+								&times;
+							</button>
+							<h4 class="modal-title">Chi siamo</h4>
+						</div>
+						<div class="modal-body">
+								<img usemap="#map" id="who" width="100%" src="css/who.jpg">
+								<div class="chi_siamo"></div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">
+								Close
+							</button>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<div id="new" class="modal fade">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+								&times;
+							</button>
+							<h4 class="modal-title">Istruzioni per l'uso: </h4>
+						</div>
+						<div class="modal-body">
+							<p>
+								"Raschietto" &egrave; un'applicazione semantica per l'annotazione dei documenti.
+								Ci sono due tipologie di Utenti e quindi due Modalità d'uso:
+								<h3>Modalit&agrave; VIEWER</h3>
+								<p id="cur1">&Egrave; la modalita&grave; di default: l’utente Viewer pu&ograve; scegliere il documento da leggere ed esaminare le annotazioni presenti.
+								   L'utente pu&ograve; scegliere il documento di suo interesse nella lista dei documenti, cliccando sul bottone in alto a sinistra. Inoltre
+								   pu&ograve; anche scegliere quali annotazioni cercare: nel pannello gruppi si pu&ograve; selezionare il gruppo di cui si vogliono caricare le annotazioni, oppure forzare lo scraping automatico.
+								   L'utente ha la possibilit&agrave; di passare alla modalit&agrave; "ANNOTATOR" attraverso il dropdown nella navbar.
+								</p>
+								<h3>Modalit&agrave; ANNOTATOR</h3>
+								<p id="cur1">Per diventare Annotator &egrave; necessario un login (username, e-mail). L'utente Annotator puó fare tutto quello che &egrave; stato descritto nella precedente sezione (Utente Viewer).
+									L'annotator  pu&ograve; creare nuove annotazioni sull'intero documento visualizzato o su un frammento di esso selezionando una porzione del testo.
+								    Una volta creata un'annotazione, per confermarne il salvataggio, l'annotator dovrà cliccare sul bottone "Salva sul triplestore" presente nella modal(accessibile atraverso il secondo bottone in alto a sinistra).
+									Tale modal permetterà all'utente di visualizzare le modifiche apportate e le nuove note create. Infine pu&ograve; tornare alla modalità Viewer.
+								</p>
+							</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">
+								Close
+							</button>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<div id="scopo" class="modal fade">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+								&times;
+							</button>
+							<h4 class="modal-title">Scopo</h4>
+						</div>
+						<div class="modal-body">
+							<p id="cur1">
+								Lo Scopo del progetto di Tecnologie Web a.a 2104/2015 &egrave; quello di costruire un'applicazione web che fornisca un servizio di data scraping di articoli scientifici con supporto di annotazioni "linked data".
+							</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">
+								Close
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="modal-group-note">
+			</div>
+
+		<div id="modal-filter" class="modal fade">
+			<div data-toggle="modal-filtri" class="modal-filter" role="dialog">
+				<div class="modal-dialog modal-lg">
+					<!-- Modal filtri-->
+					<div class="modal-content col-md-7">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">
+								Close
+							</button>
+							<h4 class="modal-title">Seleziona Filtro</h4>
+						</div>
+						<div class="modal-body modal-body-filtri">
+							<div class="form-group">
+								<div class="col-lg-10">
+									<div style="float:left">
+										<p><label>Autore</label> &nbsp; <span class="filtriAutore">&nbsp;&nbsp;&nbsp;&nbsp;</span> </p>
+										<p><label>Titolo</label> &nbsp; <span class="filtriTitolo">&nbsp;&nbsp;&nbsp;&nbsp;</span> </p>
+										<p><label>Anno Pubblicazione</label>&nbsp; <span class="filtriAnno">&nbsp;&nbsp;&nbsp;&nbsp;</span> </p>
+										<p><label>DOI</label>&nbsp; <span class="filtriDOI">&nbsp;&nbsp;&nbsp;&nbsp;</span> </p>
+										<p><label>Commento</label>&nbsp; <span class="filtriCommento">&nbsp;&nbsp;&nbsp;&nbsp;</span> </p>
+										<p><label>Retorica</label> &nbsp; <span class="filtriRetorica">&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+										<p><label>URL</label>&nbsp; <span class="filtriURL">&nbsp;&nbsp;&nbsp;&nbsp;</span> </p>
+										<p><label>Citazione</label>&nbsp; <span class="filtriCites">&nbsp;&nbsp;&nbsp;&nbsp;</span> </p>
+									</div>
+									<div style="float: right">
+									 <div class="flipswitch">
+										<input type="checkbox" name="flipswitch" class="flipswitch-cb" value=0 id="filtroAutore" checked>
+										<label class="flipswitch-label" for="filtroAutore">
+											<div class="flipswitch-inner"></div>
+											<div class="flipswitch-switch"></div>
+										</label>
+									</div>
+									 <div class="flipswitch">
+										<input type="checkbox" name="flipswitch" class="flipswitch-cb" value=0 id="filtroTitolo" checked>
+										<label class="flipswitch-label" for="filtroTitolo">
+											<div class="flipswitch-inner"></div>
+											<div class="flipswitch-switch"></div>
+										</label>
+									  </div>
+									 <div class="flipswitch">
+										<input type="checkbox" name="flipswitch" class="flipswitch-cb" value=0 id="filtroAnno" checked>
+										<label class="flipswitch-label" for="filtroAnno">
+											<div class="flipswitch-inner"></div>
+											<div class="flipswitch-switch"></div>
+										</label>
+									  </div>
+									  <div class="flipswitch">
+										<input type="checkbox" name="flipswitch" class="flipswitch-cb" value=0 id="filtroDOI" checked>
+										<label class="flipswitch-label" for="filtroDOI">
+											<div class="flipswitch-inner"></div>
+											<div class="flipswitch-switch"></div>
+										</label>
+									</div>
+									  <div class="flipswitch">
+										<input type="checkbox" name="flipswitch" class="flipswitch-cb" value=0 id="filtroCommento" checked>
+										<label class="flipswitch-label" for="filtroCommento">
+											<div class="flipswitch-inner"></div>
+											<div class="flipswitch-switch"></div>
+										</label>
+									  </div>
+									  <div class="flipswitch">
+										<input type="checkbox" name="flipswitch" class="flipswitch-cb" value=0 id="filtroRetorica" checked>
+										<label class="flipswitch-label" for="filtroRetorica">
+											<div class="flipswitch-inner"></div>
+											<div class="flipswitch-switch"></div>
+										</label>
+									  </div>
+									  <div class="flipswitch">
+										<input type="checkbox" name="flipswitch" class="flipswitch-cb" value=0 id="filtroURL" checked>
+										<label class="flipswitch-label" for="filtroURL">
+											<div class="flipswitch-inner"></div>
+											<div class="flipswitch-switch"></div>
+										</label>
+									  </div>
+									  <div class="flipswitch">
+										<input type="checkbox" name="flipswitch" class="flipswitch-cb" value=0 id="filtroCitazione" checked>
+										<label class="flipswitch-label" for="filtroCitazione">
+											<div class="flipswitch-inner"></div>
+											<div class="flipswitch-switch"></div>
+										</label>
+									  </div>
+									 </div>
+
+
+								</div>
+							</div>
+						</div>
+						<!--<div class="modal-footer">-->
+							<!--<button data-dismiss="modal" type="button" class="btn btn-default save-on-store">
+								Applica
+							</button>
+							<button type="button" class="btn btn-default" data-dismiss="modal">
+								Close
+							</button>-->
+						<!--</div>-->
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Modal per visualizzare i documenti disponibili-->
+		<div id="modal-docs" class="modal fade">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							<h4 class="modal-title">Documenti disponibili</h4>
+						</div>
+						<div class="modal-body form-horizontal">
+							<table>
+								<!-- <tr>
+									<td class="doc-num"></td>
+									<td class="doc-title"></td>
+									<td class="doc-scrape"></td>
+									<td class="doc-delete"></td>
+								</tr> -->
+							</table>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">	Close </button>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+		<!-- Modal per visualizzare i dettagli delle annotazioni-->
+		<div id="modal-note" class="modal fade">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							<h4 class="modal-title">Nota</h4>
+						</div>
+						<div class="modal-body form-horizontal">
+							<p>
+								<label>Titolo: </label> <span id="titolo-nota"></span>
+							</p>
+							<p>
+								<label>Contenuto: </label> <span id="contenuto-nota"></span>
+							</p>
+							<p>
+								<label>Autore: </label> <span id="autore-nota"></span>
+							</p>
+							<p>
+								<label>Ora: </label> <span id="time-nota"></span>
+							</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">	Close </button>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<!-- Modal per visualizzare la tabella delle annotazioni modificate localmente-->
+			<div id="modal-changes" class="modal fade" role="dialog">
+				<div class="modal-dialog modal-lg">
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">
+								&times;
+							</button>
+							<h4 class="modal-title">Annotazioni modificate</h4>
+						</div>
+						<div class="modal-body">
+							<span class="not_annot">Non ci sono annotazioni modificate attualmente.</span>
+							<table class="table-edit-note" width="100%">
+								<tr>
+									<th>Dettagli</th>
+									<th>Articolo</th>
+									<th>Annotazione</th>
+									<th>Salva</th>
+									<th>Cancella</th>
+								</tr>
+							</table>
+						<br><br>
+						<div>
+							<b>Nuove Annotazioni</b><br>
+							<table class="table-new-note" width="100%">
+								<thead>
+									<th>Articolo</th>
+									<th>Tipo Nota</th>
+									<th>Valore</th>
+									<th>Cancella</th>
+								</thead>
+							</table>
+
+						</div>
+
+						</div>
+						<div class="modal-footer">
+							<button type="button" onclick="saveTostore()" class="btn btn-default save-on-store">
+								Salva tutto
+							</button>
+							<button type="button" class="btn btn-default" data-dismiss="modal">
+								Close
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="modal-create-note" class="modal fade" role="dialog">
+				<div class="modal-dialog ">
+					<!-- Modal content-->
+					<div class="modal-content col-md-12">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">
+								&times;
+							</button>
+							<h4 class="modal-title">Crea Annotazione</h4>
+						</div>
+						<div class="modal-body">
+							<form class="form-horizontal">
+								<fieldset>
+									<div class="form-group">
+										<label for="textArea" class="col-lg-2 control-label">Label: </label>
+										<div class="col-lg-10">
+											<textarea id="labelCreaNota" class="form-control" rows="3"></textarea>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="select" class="col-lg-2 control-label">Tipo</label>
+										<div class="col-lg-5">
+											<select class="form-control" onchange ="selectType()" id="selectTypeNote">
+												<option value=""> - - - </option>
+												<option value="Autore">Autore</option>
+												<option value="Anno di pubblicazione">Anno di pubblicazione</option>
+												<option value="Titolo">Titolo</option>
+												<option value="DOI">DOI</option>
+												<option value="URL">URL</option>
+												<option value="Commento">Commento</option>
+												<option value="Retorica">Retorica</option>
+												<option value="Citazione">Citazione</option>
+											</select>
+										</div>
+									</div>
+									<div class="form-group typeNote"></div>
+								</fieldset>
+							</form>
+
+						</div>
+						<div class="modal-footer">
+							<button  type="button" onclick="saveNote()" class="btn btn-success" data-dismiss="modal">
+								Save
+							</button>
+							<button type="button" class="btn btn-default" data-dismiss="modal">
+								Close
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Modal per la modifica delle annotazioni-->
+			<div id="modal-details" class="modal fade" role="dialog">
+				<div class="modal-dialog modal-lg">
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">
+								&times;
+							</button>
+							<h4 class="modal-title">Dettagli annotazione</h4>
+						</div>
+						<div class="modal-body">
+							<div class="id"></div>
+							<table width="100%">
+								<tr>
+									<th>Label</th>
+									<td class="ann-label"></td>
+								</tr>
+								<tr>
+									<th>Tipo</th>
+									<td class="ann-type"></td>
+								</tr>
+								<tr style="display: none">
+									<td colspan="2" class="ann-expr-cited"></td>
+								</tr>
+								<tr>
+									<th>Oggetto</th>
+									<td class="widget"></td>
+								</tr>
+							</table>
+							<div id="cited-table">
+								<h4>Dettagli dell'articolo citato</h4>
+								<table>
+									<tr>
+										<th>Titolo</th>
+										<td class="ann-title-cited"></td>
+									</tr>
+									<tr>
+										<th>Anno di pubblicazione</th>
+										<td class="ann-year-cited"></td>
+									</tr>
+									<tr>
+										<th>DOI</th>
+										<td class="ann-doi-cited"></td>
+									</tr>
+									<tr>
+										<th>Autori</th>
+										<td class="ann-authors-cited"></td>
+									</tr>
+								</table>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<span class="provenance" style="float: left;"></span>
+							<button title="Modifica Target" type="button" class="btn btn-default target-edit">
+								<i class="fa fa-dot-circle-o fa-2x"></i>
+							</button>
+							<button type="button" class="btn btn-default edit">
+								Modifica
+							</button>
+							<button type="button" class="btn btn-default" data-dismiss="modal">
+								Close
+							</button>
+						</div><td>
+					</div>
+				</div>
+			</div>
+			<!-- Modal per la modifica del target-->
+			<div id="modal-target" class="modal fade" role="dialog">
+				<div class="modal-dialog modal-lg">
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-body">
+							<div class="id"></div>
+							<i class="fa fa-check fa-2x"></i>
+							<i class="fa fa-times fa-2x"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!--Contenitore modal END-->
+
+		<!-- Contenitore -->
+		<div  class="container">
+
+
+			<div class="row clearfix">
+				<!--Parte Sinistra della Home-->
+				<div class="col-md-3" id="sinistra">
+					<div class="row clearfix border">
+
+						<!--ALERT MODIFICA APPORTATA-->
+				<div class="alert alert-dismissible alert-success alert-update-save">
+							<i class="fa fa-cloud-download fa-2x"></i>&nbsp;&nbsp;&nbsp; <a>Modifica Effettuata</a>.
+				</div>
+				<!--ALERT NOTA SALVATA-->
+				<div class="alert alert-dismissible alert-success alert-save">
+						<i class="fa fa-download fa-2x"></i>&nbsp;&nbsp;&nbsp; <a>Note Salvate</a>.
+				</div>
+				<!--ALERT NOTA CANCELLATA-->
+				<div class="alert alert-dismissible alert-success alert-delete">
+						<i class="fa fa-trash-o fa-2x"></i>&nbsp;&nbsp;&nbsp; <a>Nota Cancellata con Successo</a>.
+				</div>
+				<!--ALERT LOAD NOTE-->
+				<div class="alert alert-dismissible alert-warning">
+						<i class="fa fa-spinner fa-pulse fa-3x"></i>&nbsp;&nbsp;&nbsp;<a> Caricamento Note...</a>
+				</div>
+
+				<!--ALERT LOAD Group-->
+				<div class="alert alert-dismissible alert-warning alert-gruppi">
+						<i class="fa fa-spinner fa-pulse fa-3x"></i>&nbsp;&nbsp;&nbsp;<a> Caricamento Gruppi</a>
+				</div>
+				<!--ALERT CAMPI LOGIN-->
+				<div class="alert alert-dismissible alert-danger alert-login">
+					<i class="fa fa-exclamation-triangle fa-3x"></i>&nbsp;&nbsp;&nbsp; <a>Riempire Tutti i Campi</a>
+				</div>
+				<!--ALERT SELEZIONE VUOTA-->
+				<div class="alert alert-dismissible alert-danger alert-empty">
+					<i class="fa fa-exclamation-triangle fa-3x"></i>&nbsp;&nbsp;&nbsp; <a>Selezionare testo</a>
+				</div>
+				<!--ALERT SCRAPING-->
+				<div class="alert alert-dismissible alert-info">
+						<i class="fa fa-pencil fa-3x"></i>&nbsp;&nbsp;&nbsp; <a> Caricamento in corso ...</a>
+				</div>
+
+						<!--Barra superiore inerente alla parte sinistra-->
+						<ul class="nav nav-pills">
+							<li>
+								<button title="Documenti" class="btn btn-primary" type="button"  id="doc_list" class="btn btn-primary">
+									<i class="fa fa-folder-open-o fa-2x"></i>
+								</button>
+
+								<!-- Lista degli articoli in locale -->
+								<ul id="list" class="dropdown-menu" role="menu"></ul>
+							</li>
+							&nbsp;
+
+							&nbsp;
+							<li>
+								<button title="Tabella Note Locali" data-target="modal-create-node" type="button" id="doc_info" class="btn btn-primary">
+									<i class="fa fa-table fa-2x"></i>
+								</button>
+							</li>
+							&nbsp;
+							<li>
+								<button title="Crea Annotazione" type="button" id="createNote" class="btn btn-primary">
+									<i class="fa fa-comments-o fa-2x"></i>
+								</button>
+							</li>
+					<li>
+						<button title="Filtri"  data-toggle="modal" data-target="#modal-filter" title="Filtri" type="button" id="filter" class="btn btn-primary">
+							<i class="fa fa-filter fa-2x"></i>
+						</button>
+					</li>
+
+					<li>
+						<button title="Ricarica Annotazioni" value="" type="button" id="rescrape" class="btn btn-primary">
+							<i class="fa fa-refresh fa-2x"></i>
+						</button>
+					</li>
+
+
+						</ul>
+						<br>
+						<ul class="list-group">
+							<li class="list-group-item collapsed" data-toggle="collapse">
+								<label>Gruppi</label><span id="numeroGruppi" class="badge bvisit">0</span>
+							</li>
+
+							<div class="list-group">
+								<div class="panel panel-default">
+									<div class="well well-sm"><b>Script and Furious</b>&nbsp;&nbsp;<input id="checkOurNote" type="checkbox" value=1 style="float:right" checked></div>
+									<div class="lista-gruppi">
+									</div>
+							</div>
+							</div>
+						</ul>
+						<!-- Annotazioni Correnti -->
+						<ul class="list-group">
+							<li class="list-group-item collapsed" data-toggle="collapse" data-target="#open_note">
+								<span id="Numero_note" class="badge bvisit numero_note"></span>
+								<label>Annotazioni Correnti</label>
+							</li>
+
+							<div id="open_note" class="list-group collapse">
+								<div id="annotations" class="panel panel-default note_correnti"></div>
+							</div>
+						</ul>
+						<!-- FINE ANNOTAZIONI CORRENTI-->
+					</div>
+				</div>
+
+				<!--Contenitore destro della Home-->
+				<div id="destra" class="col-md-9 p_dsa">
+					<div id="extra">
+					</div>
+
+
+					<div id="articolo">
+							<div class="title_scroll">Titolo</div>
+							<div id="otherPage" ></div>
+					</div>
+						</div><!--fine contenitore dx-->
+			</div>
+		</div>
+		<!-- Jquery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" media="all" href="css/styles.css">
+		<!--SCRIPT VARI -->
+		<script src="js/VarGlobali.js"></script>
+		<script src="js/jsprogetto.js"></script>
+		<script src="js/highlight.js"></script>
+		<script src="js/filtri.js"></script>
+		<script src="js/alert_function.js"></script>
+		<script src="js/fakeLoader.min.js"></script>
+		<script src="js/login.js"></script>
+		<script src="js/annotazioniLocali.js"></script>
+		<script src="js/annotations_edit.js"></script>
+		<script src="js/otherGroups.js"></script>
+		<script src="js/noteView.js"></script>
+		<script src="js/img.js"></script>
+
+		<script src="js/doc_manager.js" charset="utf-8"></script>
+		<script>
+			$(document).ready(function() {
+				$(".fakeloader").fakeLoader({
+					timeToHide : 10000000000,
+					bgColor : "#008890",
+					spinner : "spinner1"
+				});
+			});
+		</script>
+	</body>
+</html>

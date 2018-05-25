@@ -1,0 +1,162 @@
+[
+  {
+		"url": "http://www.dlib.org/dlib/november14/beel/11beel.html",
+		"title": "The Architecture and Datasets of Docear's Research Paper Recommender System"
+	},
+	{
+		"url": "http://www.dlib.org/dlib/november14/brook/11brook.html",
+		"title": "The Social, Political and Legal Aspects of Text and Data Mining (TDM)"
+	},
+	{
+		"url": "http://www.dlib.org/dlib/november14/fedoryszak/11fedoryszak.html",
+		"title": "Efficient Blocking Method for a Large Scale Citation Matching"
+	},
+	{
+		"url": "http://www.dlib.org/dlib/november14/giannakopoulos/11giannakopoulos.html",
+		"title": "Discovering and Visualizing Interdisciplinary Content Classes in Scientific Publications"
+	},
+	{
+		"url": "http://www.dlib.org/dlib/november14/holub/11holub.html",
+		"title": "Annota: Towards Enriching Scientific Publications with Semantics and User Annotations"
+	},
+	{
+		"url": "http://www.dlib.org/dlib/november14/jahja/11jahja.html",
+		"title": "Experiments on Rating Conferences with CORE and DBLP"
+	},
+	{
+		"url": "http://www.dlib.org/dlib/november14/klampfl/11klampfl.html",
+		"title": "A Comparison of Two Unsupervised Table Recognition Methods from Digital Scientific Articles"
+	},
+	{
+		"url": "http://www.dlib.org/dlib/november14/knoth/11knoth.html",
+		"title": "Towards Semantometrics: A New Semantic Similarity Based Measure for Assessing a Research Publication's Contribution"
+	},
+	{
+		"url": "http://www.dlib.org/dlib/november14/kristianto/11kristianto.html",
+		"title": "Extracting Textual Descriptions of Mathematical Expressions in Scientific Papers"
+	},
+	{
+		"url": "http://www.dlib.org/dlib/november14/kroell/11kroell.html",
+		"title": "Towards a Marketplace for the Scientific Community: Accessing Knowledge from the Computer Science Domain"
+	},
+	{
+		"url": "http://www.dlib.org/dlib/november14/murray-rust/11murray-rust.html",
+		"title": "AMI-diagram: Mining Facts from Images"
+	},
+	{
+		"url": "http://www.dlib.org/dlib/november14/smith-unna/11smith-unna.html",
+		"title": "The ContentMine Scraping Stack: Literature-scale Content Mining with Community-maintained Collections of Declarative Scrapers"
+	},
+	{
+		"url": "http://www.dlib.org/dlib/november14/tkaczyk/11tkaczyk.html",
+		"title": "GROTOAP2 — The Methodology of Creating a Large Ground Truth Dataset of Scientific Articles"
+	},
+	{
+		"url": "http://www.dlib.org/dlib/november14/voelske/11voelske.html",
+		"title": "A Keyquery-Based Classification System for CORE"
+	},
+	{
+		"url": "http://www.dlib.org/dlib/november14/meleco/11meleco.html",
+		"title": "Conference Report: Research Data Alliance (RDA) 4th Plenary Meeting"
+	},
+	{
+		"url": "http://www.dlib.org/dlib/march15/oliver/03oliver.html",
+		"title": "Storage is a Strategic Issue: Digital Preservation in the Cloud"
+	},
+	{
+		"url": "http://www.dlib.org/dlib/march15/bishoff/03bishoff.html",
+		"title": "Managing Digital Collections Survey Results"
+	},
+	{
+		"url": "http://www.dlib.org/dlib/march15/moulaison/03moulaison.html",
+		"title": "OpenDOAR Repositories and Metadata Practices"
+	},
+	{
+		"url": "http://www.dlib.org/dlib/march15/schopfel/03schopfel.html",
+		"title": "A French-German Survey of Electronic Theses and Dissertations: Access and Restrictions"
+	},
+	{
+		"url": "http://www.dlib.org/dlib/march15/houghton/03houghton.html",
+		"title": "Trustworthiness: Self-assessment of an Institutional Repository against ISO 16363-2012"
+	},
+	{
+		"url": "http://www.dlib.org/dlib/march15/park/03park.html",
+		"title": "Development of Linked Data for Archives in Korea"
+	},
+	{
+		"url": "http://www.dlib.org/dlib/march15/mccown/03mccown.html",
+		"title": "Tools for Discovering and Archiving the Mobile Web"
+	},
+	{
+		"url": "http://www.dlib.org/dlib/march15/hienert/03hienert.html",
+		"title": "Digital Library Research in Action: Supporting Information Retrieval in Sowiport"
+	},
+	{
+		"url": "http://www.dlib.org/dlib/march15/sorensen/03sorensen.html",
+		"title": "Reconstructing the Past Through Utah Sanborn Fire Insurance Maps A Geospatial Approach to Library Resources"
+	},
+	{
+		"url": "http://rivista-statistica.unibo.it/article/view/4594",
+		"title": "Testing normality of latent variables in the polychoric correlation"
+	},
+	{
+		"url": "http://rivista-statistica.unibo.it/article/view/4595",
+		"title": "Multivariate normal-Laplace distribution and processes"
+	},
+	{
+		"url": "http://rivista-statistica.unibo.it/article/view/4597",
+		"title": "On a Test of Hypothesis to Verify the Operating Risk Due to Accountancy Errors"
+	},
+	{
+		"url": "http://rivista-statistica.unibo.it/article/view/4598",
+		"title": "A stratified Mangat and Singh’s optional randomized response model using proportional and optimal allocation"
+	},
+	{
+		"url": "http://rivista-statistica.unibo.it/article/view/4599",
+		"title": "On concurvity in nonlinear and nonparametric regression models"
+	},
+	{
+		"url": "http://rivista-statistica.unibo.it/article/view/4600",
+		"title": "Estimation of finite population variance using auxiliary information in sample surveys"
+	},
+	{
+		"url": "http://rivista-statistica.unibo.it/article/view/4601",
+		"title": "Confluent gamma density in modelling tsunami interevent times"
+	},
+	{
+		"url": "http://montesquieu.unibo.it/article/view/5312",
+		"title": "The Taste of Sublime at Montesquieu and Burke"
+	},
+	{
+		"url": "http://montesquieu.unibo.it/article/view/5188",
+		"title": "Arendt-Fest: «perpetrators of great political crimes» or «great political criminals»?"
+	},
+	{
+		"url": "http://montesquieu.unibo.it/article/view/5189",
+		"title": "Two Ways to Abundance? «The rules which nature follows are fit for her, those which man follows for him»"
+	},
+	{
+		"url": "http://intreccidarte.unibo.it/article/view/4579",
+		"title": "Una tavola poco nota del Quattrocento bolognese"
+	},
+	{
+		"url": "http://intreccidarte.unibo.it/article/view/4661",
+		"title": "I missionari e l’iconoclastia: la tela del Ritiro San Pellegrino"
+	},
+	{
+		"url": "http://intreccidarte.unibo.it/article/view/4580",
+		"title": "Tra storia e leggenda. Indagini sul network artistico tra Sofonisba Anguissola, Giulio Clovio e Levina Teerlinc"
+	},
+	{
+		"url": "http://intreccidarte.unibo.it/article/view/4581",
+		"title": "Confessioni e assoluzioni: nuove spigolature su Leonello Spada e Guido Reni"
+	},
+	{
+		"url": "http://intreccidarte.unibo.it/article/view/4582",
+		"title": "Percorsi digitali per le immagini del fondo Supino: tra tutela, didattica e critica d’arte"
+	},
+	{
+		"url": "http://intreccidarte.unibo.it/article/view/4584",
+		"title": "Dal manichino alla real doll. La bambola nella visualità contemporanea"
+	}
+]

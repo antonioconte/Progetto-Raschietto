@@ -1,0 +1,214 @@
+#cur{
+    text-align: justify;
+    font-weight: solid;
+    font-size: 19px;
+    color: black;
+    font-family: "Times New Roman", Verdana, serif;
+}
+#scope{
+    text-align: justify;
+    font-weight: solid;
+    font-size: 20px;
+    color: black;
+    font-family: "Times New Roman", Verdana, serif;
+}
+
+.container{
+    width: 96%;
+}
+
+
+.corpov{
+    padding-top: 0px;
+    background-image: url("./images/annotatore.jpg");
+     -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin: 0px;
+}
+
+.corpoe{
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding-top: 0px;
+    background: url("./images/editore.jpg");
+}
+
+#sinistra > div > ul.nav.nav-pills > * {
+    margin: 2px;
+}
+
+.evidenziatore{
+    background-color: #FFFF00;
+    color: white;
+}
+
+
+@font-face{
+    font-family: pers;
+    src: url("font.ttf");
+}
+#gruppo{
+    text-align: center;
+    line-height: 100% !important;
+    color: white;
+    font-family: pers;
+    font-size: 20px;
+}
+
+#url, .note_correnti{
+    word-wrap: break-word;
+}
+
+
+
+a.text-rethoric{
+    font-weight: bold;
+    color: rgb(161, 24, 24) !important;
+}
+
+a.text-comment{
+    font-weight: bold;
+   color: rgb(8, 9, 118) !important
+}
+
+.btn-group{
+    padding: 8px !important;
+}
+
+#open_note{
+    height: 500px !important;
+    overflow: auto !important;
+}
+
+.well{
+    padding: 5px !important;
+    margin-bottom: 0px !important;
+}
+
+.jumbotron *{
+    text-align: justify;
+}
+
+@media (min-width: 768px) {
+    #otherPage{
+        overflow-y: scroll;
+        height: 650px;
+    }
+
+    .jumbotron *{
+        font-size: 15px !important;
+    }
+}
+
+@media (max-width: 767px) {
+    #otherPage{
+        overflow-x: scroll;
+        height: auto;
+        word-wrap: break-word !important;
+
+    }
+    .jumbotron *{
+        word-wrap: break-word !important;
+        font-size: 13px !important;
+        padding-left: 2px !important;
+        margin-right: 10px !important;
+    }
+}
+
+/*SearchBar*/
+#bs-example-navbar-collapse-1 > ul:nth-child(1) > li:nth-child(4){
+    width: 400px !important;
+    margin-top: 6px !important
+}
+
+/*SearchButton*/
+#bs-example-navbar-collapse-1 > ul:nth-child(1) > li:nth-child(5){
+    line-height: 6px;
+    margin: 5px;
+}
+
+/* Colori delle evidenziazioni dei target delle annotazioni */
+.highlight.hasAuthor{
+	background-color: rgba(255, 0, 0, 0.5);
+}
+
+.highlight.hasTitle{
+	background-color: rgba(0, 255, 0, 0.5);
+}
+
+.highlight.hasDOI{
+	background-color: rgba(0, 0, 255, 0.5);
+}
+
+.highlight.hasPublicationYear{
+	background-color: rgba(193, 247, 32, 0.5);
+}
+
+.highlight.denotesRhetoric{
+	background-color: rgba(255, 255, 0, 0.5);
+}
+
+.highlight.cites{
+	background-color: rgba(247, 139, 32, 0.5);
+}
+
+.highlight.hasComment{
+    background-color: rgba(0, 255, 255, 0.5);
+}
+
+.highlight.hasURL{
+    background-color: rgba(255, 0, 255, 0.5);
+}
+
+#otherPage {
+	background-color: #FCFCFC;
+	padding: 25px;
+	border-radius: 5px;
+}
+
+.title_scroll{
+    font-size: 20px !important;
+    padding: 10px !important;
+    background: white !important;
+    margin-bottom: 10px !important;
+    border-radius: 10px !important;
+}
+.flipswitch{
+    margin-bottom: 8px;
+}
+.modal-body-filtri{
+    height: 330px;
+}
+
+.label-info{
+    font-size: 85% !important;
+    font-weight: none !important;
+}
+
+#modal-target .modal-dialog{
+	position: fixed;
+	bottom: 0px;
+	right: 10px;
+	width: 110px;
+}
+
+#modal-target {
+	position: static;
+}
+
+#modal-target .fa{
+	padding: 5px;
+}
+
+#modal-target .fa-check{
+	color: green;
+}
+
+#modal-target .fa-times{
+	color: red;
+}
